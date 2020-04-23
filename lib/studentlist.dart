@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
+import 'package:studentappv1/search.dart';
 
 class StudentList extends StatefulWidget {
   @override
@@ -51,7 +52,7 @@ class _StudentListState extends State<StudentList> {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: const <Widget>[
+          children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
@@ -71,6 +72,7 @@ class _StudentListState extends State<StudentList> {
             ListTile(
               leading: Icon(Icons.account_circle),
               title: Text('Profile'),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MyCustomForm())),
             ),
             ListTile(
               leading: Icon(Icons.settings),
@@ -83,7 +85,7 @@ class _StudentListState extends State<StudentList> {
           itemCount: locations.length,
           itemBuilder: (context, index){
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 1,horizontal: 4),
+              padding: EdgeInsets.symmetric(vertical: 1,horizontal: 4),
               child: Card(
                 child: ListTile(
                   onTap: () {
