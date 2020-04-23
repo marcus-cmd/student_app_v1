@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:studentappv1/search.dart';
+import 'package:studentappv1/faq.dart';
 
 class StudentList extends StatefulWidget {
   @override
@@ -66,10 +67,6 @@ class _StudentListState extends State<StudentList> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.message),
-              title: Text('Messages'),
-            ),
-            ListTile(
               leading: Icon(Icons.account_circle),
               title: Text('Profile'),
               onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MyCustomForm())),
@@ -77,6 +74,11 @@ class _StudentListState extends State<StudentList> {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
+            ),
+            ListTile(
+              leading: Icon(Icons.help),
+              title: Text('FAQ'),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Faq())),
             ),
           ],
         ),

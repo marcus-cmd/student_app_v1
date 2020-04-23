@@ -4,6 +4,7 @@ import 'package:studentappv1/loading.dart';
 import 'package:studentappv1/chat.dart';
 import 'package:studentappv1/search.dart';
 import 'package:studentappv1/test.dart';
+import 'package:studentappv1/faq.dart';
 
 void main() => runApp(MaterialApp(
   initialRoute: '/studentlist',
