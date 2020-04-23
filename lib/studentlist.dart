@@ -107,8 +107,12 @@ class _StudentListState extends State<StudentList> {
             ),
             ListTile(
               leading: Icon(Icons.help),
-              title: Text('FAQ'),
+              title: Text('How To Use the App'),
               onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Faq())),
+            ),
+            ListTile(
+              leading: Icon(Icons.face),
+              title: Text('Invite Friends'),
             ),
           ],
         ),
