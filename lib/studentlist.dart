@@ -13,6 +13,11 @@ class StudentList extends StatefulWidget {
 
 class _StudentListState extends State<StudentList> {
 
+  Icon cusIcon = Icon(Icons.search);
+  Widget cusSearchBar = Text("Ask Me!");
+
+
+
   int counter = 0;
 
   List<WorldTime> locations = [
@@ -44,10 +49,35 @@ class _StudentListState extends State<StudentList> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
         appBar: AppBar(
-          title: Text('Ask Me!'),
+          elevation: 20,
+          title: cusSearchBar,
             actions: <Widget>[
-            new IconButton(icon: new Icon(Icons.search),
-              onPressed: (){},
+              IconButton(
+                icon: cusIcon,
+              onPressed: (){
+                  setState(() {
+                    if(this.cusIcon.icon == Icons.search){
+                      this.cusIcon = Icon(Icons.cancel);
+                      this.cusSearchBar = TextField(
+                        textInputAction: TextInputAction.go,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                            hintText: "Search",
+                            hintStyle: TextStyle(fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),
+                            focusColor: Colors.white,
+                        ),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0,                  ),
+                      );
+                    }
+                    else{
+                      this.cusIcon = Icon(Icons.search);
+                      this.cusSearchBar = Text("Ask Me!");
+                    }
+                  });
+              },
     )],
         ),
       drawer: Drawer(
