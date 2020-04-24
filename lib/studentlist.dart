@@ -1,8 +1,7 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:studentappv1/search.dart';
 import 'package:studentappv1/faq.dart';
+import 'package:studentappv1/search.dart';
+import 'package:studentappv1/settings.dart';
 
 class StudentList extends StatefulWidget {
   @override
@@ -104,6 +103,9 @@ class _StudentListState extends State<StudentList> {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
+              onTap: () =>
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (BuildContext context) => Settings())),
             ),
             ListTile(
               leading: Icon(Icons.help),
