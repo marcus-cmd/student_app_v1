@@ -9,7 +9,10 @@ void main() => runApp(MaterialApp(
   initialRoute: '/studentlist',
   routes: {
     '/': (context) => Loading(),
-    '/chat': (context) => Chat(),
+    //'/chat': (context) => Chat(),
+    Chat.routeName: (context) => Chat(),
+
     '/studentlist': (context) => StudentList(),
   },
 ));
+
