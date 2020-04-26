@@ -3,6 +3,8 @@ import 'package:studentappv1/faq.dart';
 import 'package:studentappv1/search.dart';
 import 'package:studentappv1/settings.dart';
 
+import 'chat.dart';
+
 class StudentList extends StatefulWidget {
   @override
   _StudentListState createState() => _StudentListState();
@@ -127,6 +129,17 @@ class _StudentListState extends State<StudentList> {
               child: Card(
                 child: ListTile(
                   onTap: () {
+                   // Navigator.pushNamed(context, '/chat');
+
+                    Navigator.pushNamed(
+                      context,
+
+                      Chat.routeName,
+                      arguments: ScreenArguments(
+                        locations[index].location,
+                        locations[index].url,
+                      ),
+                    );
                   },
                   title:  Text(locations[index].location),
                   leading: FlutterLogo(),
@@ -152,3 +165,5 @@ class WorldTime {
   WorldTime({this.location, this.flag, this.url});
 
 }
+
+
